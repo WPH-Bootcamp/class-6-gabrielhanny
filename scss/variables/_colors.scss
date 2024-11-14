@@ -2,3 +2,30 @@ $white: #fff;
 $black: #000;
 
 // add the $colors map here (2 dimensional map)
+$colors: (
+    'gray-600': (
+        'type': 'gray',
+        'level': '600',
+        'color': #475467,
+    ),
+    'brand-400': (
+        'type': 'brand',
+        'level': '400',
+        'color': #B692F6,
+    ),
+    'error-500': (
+        'type': 'error',
+        'level': '500',
+        'color': #F04438,
+    ),
+    'warning-600': (
+        'type': 'warning',
+        'level': '600',
+        'color': #DC6803,
+    ),
+    'success-700': (
+        'type': 'success',
+        'level': '700',
+        'color': #067647,
+    ),
+);
