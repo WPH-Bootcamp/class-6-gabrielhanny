@@ -2,13 +2,18 @@
 @use 'sass:map';
 
 @function get-color($type, $level) {
-  @each $color, $details in $colors {
-    @if map.get($details,'type') == $type and map.get($details,'level') == $level {
-      @return map.get($details, 'color');
-    }
+  @if $type == 'gray' {
+    @return map-get(map-get($colors, 'gray'), $level);
+  } @else if $type == 'brand' {
+    @return map-get(map-get($colors, 'brand'), $level);
+  } @else if $type == 'error' {
+    @return map-get(map-get($colors, 'error'), $level);
+  } @else if $type == 'warning' {
+    @return map-get(map-get($colors, 'warning'), $level);
+  } @else if $type == 'success' {
+    @return map-get(map-get($colors, 'success'), $level);
+  } @else {
+    @warn 'Invalid color type or level';
+    @return null;
   }
-
-  @warn 'Invalid color type or level';
-  @return null;
 }
-
