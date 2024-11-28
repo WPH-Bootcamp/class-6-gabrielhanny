@@ -2,10 +2,11 @@
 @use 'sass:map';
 
 @function get-color($type, $level) {
-  $sub-map: map-get($colors, $type);
+  $color-map1: map.get($colors, $type);
+  $color-map2:map.get($color-map1, $level);
 
-  @if $sub-map {
-    @return map-get($sub-map, $level);
+  @if $color-map1 {
+    @return $color-map2;
   } @else {
     @warn 'Invalid color type or level';
     @return null;
