@@ -5,7 +5,7 @@
   $color-map1: map.get($colors, $type);
   $color-map2:map.get($color-map1, $level);
 
-  @if map-has-key($colors , $type ) and map-has-key(map.get($colors,$type),$level) {
+  @if map.has-key($colors , $type ) and map.has-key(map.get($colors,$type),$level) {
     @return $color-map2;
   } @else {
     @warn 'Invalid color type or level';
